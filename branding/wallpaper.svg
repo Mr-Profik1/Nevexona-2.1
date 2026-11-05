@@ -1,6 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect width="1920" height="1080" fill="#171717"/>
-<path d="M0 1080L700 0h140L140 1080z" fill="#202020"/><path d="M1920 0L1220 1080h-140L1780 0z" fill="#202020"/>
-<path d="M0 760L520 0h22L22 760z" fill="#FF781F" opacity=".9"/><path d="M1920 320L1400 1080h-22l520-760z" fill="#FF781F" opacity=".9"/>
-<path d="M830 640V380h54l124 168V380h54v260h-54L884 472v168z" fill="#FF781F" transform="translate(-20,-20)"/>
-<text x="960" y="760" fill="#F2F2F2" font-family="DejaVu Sans" font-size="64" letter-spacing="14" text-anchor="middle">NEVEXONA</text>
-<text x="960" y="810" fill="#A0A0A0" font-family="DejaVu Sans" font-size="22" letter-spacing="8" text-anchor="middle">2.1 · PLAY · WORK · CREATE</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+<defs>
+<radialGradient id="g" cx="50%" cy="48%" r="55%"><stop offset="0" stop-color="#FF781F" stop-opacity=".30"/><stop offset=".55" stop-color="#FF781F" stop-opacity=".06"/><stop offset="1" stop-color="#171717" stop-opacity="0"/></radialGradient>
+<linearGradient id="b" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF781F" stop-opacity="0"/><stop offset=".5" stop-color="#FF914D"/><stop offset="1" stop-color="#FF781F" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="1920" height="1080" fill="#171717"/>
+<rect width="1920" height="1080" fill="url(#g)"/>
+<path d="M-100 900L900 -60h120L20 1000z" fill="#202020"/><path d="M2020 120L1100 1140h-120L1900 120z" fill="#202020"/>
+<g stroke="url(#b)" stroke-width="4" fill="none"><path d="M-50 760L760 -40"/><path d="M1180 1120L1980 220"/><path d="M-50 860L840 -40" opacity=".5"/></g>
+<g transform="translate(790,250)"><path d="M0 330V0h70l160 220V0h70v330h-70L70 110v220z" fill="#FF781F"/><path d="M0 330V0h70l160 220V0h70v330h-70L70 110v220z" fill="none" stroke="#FF914D" stroke-width="2" opacity=".6"/></g>
+<text x="960" y="700" fill="#F2F2F2" font-family="DejaVu Sans" font-size="96" letter-spacing="22" text-anchor="middle">NEVEXONA</text>
+<text x="960" y="770" fill="#FF781F" font-family="DejaVu Sans" font-size="44" letter-spacing="14" text-anchor="middle" font-weight="bold">2.1 GAMING</text>
+<text x="960" y="830" fill="#A0A0A0" font-family="DejaVu Sans" font-size="22" letter-spacing="12" text-anchor="middle">PLAY · WORK · CREATE</text>
+</svg>

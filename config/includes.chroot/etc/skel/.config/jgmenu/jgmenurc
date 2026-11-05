@@ -1,0 +1,18 @@
+# NEVEXONA меню «Пуск» (jgmenu). Параметры проверяются сборкой и запуском на ВМ.
+menu_width = 380
+menu_margin_x = 8
+menu_margin_y = 48
+menu_halign = left
+menu_valign = bottom
+menu_radius = 10
+item_height = 36
+font = DejaVu Sans 11
+icon_size = 22
+color_menu_bg = #202020 100
+color_menu_border = #3A3A3A 100
+color_norm_fg = #F2F2F2 100
+color_sel_bg = #FF781F 100
+color_sel_fg = #171717 100
+color_sep_fg = #3A3A3A 100
+color_title_fg = #A0A0A0 100
+search_all_items = 1

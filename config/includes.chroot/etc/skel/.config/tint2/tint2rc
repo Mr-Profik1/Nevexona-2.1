@@ -1,11 +1,12 @@
 panel_items = LTSC
 panel_position = bottom center horizontal
-panel_size = 100% 40
+panel_size = 100% 48
 panel_background_id = 1
 taskbar_background_id = 0
 task_background_id = 2
 task_active_background_id = 3
-launcher_icon_size = 28
+launcher_icon_size = 32
+launcher_item_app = /usr/share/applications/nevexona-start.desktop
 launcher_item_app = /usr/share/applications/pcmanfm.desktop
 launcher_item_app = /usr/share/applications/nevexona-control-center.desktop
 launcher_item_app = /usr/share/applications/lxterminal.desktop
