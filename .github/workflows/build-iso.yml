@@ -1,0 +1,28 @@
+name: Build ISO
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    container:
+      image: debian:trixie
+      options: --privileged
+    steps:
+      - name: Install tools
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends live-build debootstrap git ca-certificates xorriso squashfs-tools
+      - uses: actions/checkout@v4
+      - name: Build
+        run: ./scripts/build-iso.sh
+      - name: Upload ISO
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nevexona-core-iso
+          path: |
+            build/*.iso
+            build/SHA256SUMS
+            build/build.log
+          if-no-files-found: warn

@@ -1,0 +1,12 @@
+.env
+*.key
+*.pem
+*.iso
+*.zip
+build/
+chroot/
+binary/
+cache/
+*.log
+__pycache__/
+.DS_Store

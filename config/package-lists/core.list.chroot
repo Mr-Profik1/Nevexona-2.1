@@ -1,0 +1,15 @@
+# NEVEXONA CORE — минимальный набор (имена пакетов требуют проверки сборкой)
+xserver-xorg-core
+xserver-xorg-input-libinput
+xinit
+openbox
+tint2
+lightdm
+network-manager
+network-manager-gnome
+pcmanfm
+lxterminal
+sudo
+firmware-linux-free
+firmware-linux-nonfree
+firmware-misc-nonfree

@@ -1,0 +1,2 @@
+bg #171717; bg2 #202020; surface #292929 #323232; accent #FF781F; hover #FF914D
+text #F2F2F2; text2 #A0A0A0; border #3A3A3A; error #E05252; success #4CAF75
