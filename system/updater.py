@@ -3,7 +3,7 @@
 import hashlib, json, os, re, subprocess, urllib.request
 
 REPO = "Mr-Profik1/Nevexona-2.1"
-CURRENT = "0.2.0"
+CURRENT = "0.3.0"
 
 def _ver(v):
     return tuple(int(x) for x in re.findall(r"\d+", v)[:3]) or (0,)

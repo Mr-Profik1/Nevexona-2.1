@@ -7,6 +7,7 @@ task_background_id = 2
 task_active_background_id = 3
 launcher_icon_size = 28
 launcher_item_app = /usr/share/applications/pcmanfm.desktop
+launcher_item_app = /usr/share/applications/nevexona-control-center.desktop
 launcher_item_app = /usr/share/applications/lxterminal.desktop
 time1_format = %H:%M
 time1_font = DejaVu Sans 10

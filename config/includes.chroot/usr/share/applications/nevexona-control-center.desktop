@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=NEVEXONA Control Center
+Comment=Монитор, драйверы, игры, безопасность, обновления
+Exec=nevexona-control-center
+Icon=nevexona
+Categories=System;Settings;
