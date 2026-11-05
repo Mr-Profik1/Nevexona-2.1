@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect width="1920" height="1080" fill="#171717"/>
+<path d="M0 1080L700 0h140L140 1080z" fill="#202020"/><path d="M1920 0L1220 1080h-140L1780 0z" fill="#202020"/>
+<path d="M0 760L520 0h22L22 760z" fill="#FF781F" opacity=".9"/><path d="M1920 320L1400 1080h-22l520-760z" fill="#FF781F" opacity=".9"/>
+<path d="M830 640V380h54l124 168V380h54v260h-54L884 472v168z" fill="#FF781F" transform="translate(-20,-20)"/>
+<text x="960" y="760" fill="#F2F2F2" font-family="DejaVu Sans" font-size="64" letter-spacing="14" text-anchor="middle">NEVEXONA</text>
+<text x="960" y="810" fill="#A0A0A0" font-family="DejaVu Sans" font-size="22" letter-spacing="8" text-anchor="middle">2.1 · PLAY · WORK · CREATE</text></svg>

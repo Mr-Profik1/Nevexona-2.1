@@ -17,7 +17,10 @@ lb config \
   --iso-volume "NEVEXONA_CORE" \
   --linux-flavours amd64 \
   --bootappend-live "boot=live components quiet splash"
-mkdir -p config/package-lists
+mkdir -p config/package-lists config/includes.chroot
+cp -r "$ROOT"/config/includes.chroot/. config/includes.chroot/
+mkdir -p config/includes.chroot/usr/lib/nevexona
+for d in voice security system; do cp -r "$ROOT/$d" config/includes.chroot/usr/lib/nevexona/; done
 cp "$ROOT"/config/package-lists/*.list.chroot config/package-lists/
 lb build 2>&1 | tee "$WORK/build.log"
 ls -lh ./*.iso

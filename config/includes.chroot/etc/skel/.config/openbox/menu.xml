@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+<menu id="root-menu" label="NEVEXONA">
+  <item label="Файлы"><action name="Execute"><command>pcmanfm</command></action></item>
+  <item label="Терминал"><action name="Execute"><command>lxterminal</command></action></item>
+  <item label="Монитор системы"><action name="Execute"><command>lxterminal -e "watch -n1 nevexona-monitor"</command></action></item>
+  <separator/>
+  <item label="Выход"><action name="Exit"/></item>
+</menu>
+</openbox_menu>

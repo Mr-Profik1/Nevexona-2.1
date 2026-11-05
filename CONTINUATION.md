@@ -19,3 +19,12 @@
 
 ## Известные проблемы
 - Нет проверки в реальной среде (в среде разработки нет live-build и сети для установки).
+
+## Этап 3 (DEV 0.2.0): рабочий стол и первые модули
+Сделано (код + тесты): voice/intents.py (белый список, подтверждения, без shell), security/quarantine.py,
+system/backup.py (манифест SHA256, проверка, восстановление), system/monitor.py.
+Рабочий стол: конфиги Openbox/tint2 (Minimal Orange), обои, lightdm; пакеты добавлены в core.list.chroot.
+Первая сборка Core ISO прошла в Actions (1.26 GB в Artifact); загрузка на ВМ/ПК НЕ проверена.
+НЕТ: GUI-приложений (Explorer-окно, Settings, Security/Voice GUI), распознавание речи, ClamAV-интеграция,
+Game Hub, установщик, Android (Waydroid) — только план. Голос: нет STT-движка, только разбор команд.
+Тема Openbox/tint2 и имена пакетов проверяются очередной сборкой.

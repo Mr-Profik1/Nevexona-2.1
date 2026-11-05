@@ -56,4 +56,7 @@ class Structure(unittest.TestCase):
             self.assertIsInstance(yaml.safe_load(w.read_text()), dict, w)
 
 if __name__ == "__main__":
-    unittest.main(verbosity=2)
+    suite = unittest.defaultTestLoader.discover(str(ROOT / "tests"), pattern="test_modules.py")
+    suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(Structure))
+    res = unittest.TextTestRunner(verbosity=2).run(suite)
+    sys.exit(0 if res.wasSuccessful() else 1)
