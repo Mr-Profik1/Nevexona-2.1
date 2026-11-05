@@ -1,30 +1,112 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>NEVEXONA 2.1 GAMING</title>
+<meta name="description" content="NEVEXONA 2.1 GAMING — лёгкая 64-битная система на базе Debian 13. Скачать ISO, записать флешку, запустить.">
 <link rel="icon" href="favicon.svg">
 <style>
-:root{--bg:#171717;--bg2:#202020;--s:#292929;--s2:#323232;--acc:#FF781F;--hov:#FF914D;--t:#F2F2F2;--t2:#A0A0A0;--b:#3A3A3A;--err:#E05252}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font:16px/1.55 system-ui,sans-serif}
-main{max-width:760px;margin:0 auto;padding:32px 16px 64px}
-header{display:flex;align-items:center;gap:16px;margin-bottom:28px}header img{width:64px;height:64px}
-h1{font-size:28px;margin:0;letter-spacing:.08em}h1 small{display:block;color:var(--acc);font-size:14px;letter-spacing:.2em}
-.card{background:var(--bg2);border:1px solid var(--b);border-radius:10px;padding:20px;margin:16px 0}
-.btn{display:inline-block;background:var(--acc);color:var(--bg);padding:12px 22px;border-radius:8px;font-weight:700;text-decoration:none}
-.btn:hover{background:var(--hov)}code{background:var(--s);padding:2px 6px;border-radius:4px}
-ol{padding-left:22px}li{margin:6px 0}.warn{border-color:var(--err)}.muted{color:var(--t2);font-size:14px}
+:root{--bg:#171717;--bg2:#202020;--s:#292929;--s2:#323232;--acc:#FF781F;--hov:#FF914D;--t:#F2F2F2;--t2:#A0A0A0;--b:#3A3A3A;--err:#E05252;--ok:#4CAF75}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--hov)}
-</style></head><body><main>
-<header><img src="logo.svg" alt="NEVEXONA"><h1>NEVEXONA<small>2.1 GAMING · DEV</small></h1></header>
-<div class="card"><p>Лёгкая система на базе Debian 13 (Trixie), 64-бит. Проект в ранней разработке: образ собирается автоматически, но проверен не на всех компьютерах.</p>
-<p><a class="btn" href="https://github.com/Mr-Profik1/Nevexona-2.1/releases/latest">Скачать ISO</a></p>
-<p class="muted">Рядом с файлом лежит SHA256 для проверки. Если релизов пока нет, образ ещё не опубликован.</p></div>
-<div class="card"><h2>Загрузочная флешка с телефона (EtchDroid)</h2><ol>
-<li>Скачайте ISO на телефон по кнопке выше.</li>
-<li>Подключите флешку к телефону через OTG-переходник.</li>
-<li>Откройте <b>EtchDroid</b> → <b>Write raw image</b> (запись образа) → выберите ISO → выберите флешку.</li>
-<li>Дождитесь окончания записи. <b>Все данные на флешке будут стёрты.</b></li>
-<li>Вставьте флешку в ПК, включите его и выберите загрузку с USB (обычно F12, F11, Esc или Del).</li></ol></div>
-<div class="card"><h2>С компьютера</h2><p>Windows: Rufus в режиме «DD-образ». Любая ОС: balenaEtcher.</p></div>
-<div class="card warn"><h2>Важно</h2><p>Сначала проверьте систему в режиме Live, не устанавливая её на диск. Установщик на жёсткий диск ещё в разработке. Совместимость с каждым компьютером и играми не гарантируется.</p></div>
-<p class="muted">Исходники: <a href="https://github.com/Mr-Profik1/Nevexona-2.1">GitHub</a></p>
-</main></body></html>
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+nav{position:sticky;top:0;z-index:5;background:rgba(23,23,23,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--b)}
+nav .wrap{display:flex;align-items:center;gap:20px;height:56px}
+nav img{width:30px;height:30px}nav b{letter-spacing:.14em;font-size:15px}
+nav .sp{flex:1}nav a{color:var(--t2);text-decoration:none;font-size:14px}nav a:hover{color:var(--t)}
+@media(max-width:640px){nav .links{display:none}}
+.hero{background:linear-gradient(rgba(23,23,23,.25),var(--bg)),url(hero.jpg) center/cover;padding:72px 0 56px;text-align:center}
+.hero h1{font-size:clamp(34px,8vw,64px);letter-spacing:.16em;font-weight:600}
+.hero h1 span{display:block;color:var(--acc);font-size:.38em;letter-spacing:.34em;margin-top:6px;font-weight:700}
+.hero p{max-width:620px;margin:18px auto 0;color:#d8d8d8}
+.btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:10px;font-weight:700;text-decoration:none;border:1px solid var(--b);color:var(--t);background:var(--s);transition:.15s}
+.btn:hover{border-color:var(--acc);transform:translateY(-1px)}
+.btn.main{background:var(--acc);border-color:var(--acc);color:var(--bg);font-size:18px;padding:16px 34px}
+.btn.main:hover{background:var(--hov);border-color:var(--hov)}
+.meta{margin-top:14px;color:var(--t2);font-size:14px}
+section{padding:44px 0}h2{font-size:26px;margin-bottom:6px}h2+p{color:var(--t2);margin-bottom:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.card{background:var(--bg2);border:1px solid var(--b);border-radius:12px;padding:20px}
+.card h3{font-size:17px;margin-bottom:6px}.card p{color:var(--t2);font-size:14.5px}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 9px;border-radius:99px;margin-bottom:10px}
+.ok{background:rgba(76,175,117,.15);color:var(--ok)}.wip{background:rgba(255,120,31,.15);color:var(--acc)}.no{background:rgba(224,82,82,.15);color:var(--err)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tabs button{background:var(--s);color:var(--t);border:1px solid var(--b);border-radius:8px;padding:9px 16px;font:inherit;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--acc);border-color:var(--acc);color:var(--bg);font-weight:700}
+.pane{display:none}.pane.on{display:block}
+ol{padding-left:22px}li{margin:8px 0}li::marker{color:var(--acc);font-weight:700}
+.warn{border-color:var(--err)}code{background:var(--s);padding:2px 7px;border-radius:5px;font-size:.92em}
+.sha{font-family:ui-monospace,Consolas,monospace;font-size:13px;word-break:break-all;color:var(--t2)}
+details{background:var(--bg2);border:1px solid var(--b);border-radius:10px;padding:14px 18px;margin:10px 0}summary{cursor:pointer;font-weight:600}
+details p{margin-top:8px;color:var(--t2)}
+footer{border-top:1px solid var(--b);padding:28px 0;color:var(--t2);font-size:14px;text-align:center}
+</style></head><body>
+<nav><div class="wrap"><img src="logo.svg" alt=""><b>NEVEXONA</b><span class="sp"></span>
+<span class="links"><a href="#download">Скачать</a>&nbsp;&nbsp;&nbsp;<a href="#flash">Флешка</a>&nbsp;&nbsp;&nbsp;<a href="#status">Что готово</a>&nbsp;&nbsp;&nbsp;<a href="#faq">Вопросы</a></span></div></nav>
+
+<header class="hero"><div class="wrap">
+<img src="logo.svg" alt="NEVEXONA" width="96" height="96">
+<h1>NEVEXONA<span>2.1 GAMING</span></h1>
+<p>Лёгкая 64-битная система на Debian 13 с тёмным оранжевым интерфейсом, игровым центром и офлайн-инструментами. Ранняя версия для проверки.</p>
+<div class="btns"><a class="btn main" id="dl-iso" href="https://github.com/Mr-Profik1/Nevexona-2.1/releases/latest">⬇ Скачать ISO</a>
+<a class="btn" href="#flash">Как записать флешку</a></div>
+<p class="meta" id="rel-meta">Ищем последнюю версию…</p>
+</div></header>
+
+<section id="download"><div class="wrap">
+<h2>Скачать</h2><p>Файлы публикуются в GitHub Releases. Проверяйте SHA256 после скачивания.</p>
+<div class="grid">
+<div class="card"><span class="tag ok">Основной</span><h3>NEVEXONA CORE (ISO)</h3><p>Образ для Live USB, 64-бит (amd64). Запись через EtchDroid, Rufus или balenaEtcher.</p><br><a class="btn main" id="dl-iso2" href="https://github.com/Mr-Profik1/Nevexona-2.1/releases/latest">⬇ ISO</a></div>
+<div class="card"><span class="tag ok">Проверка</span><h3>Контрольная сумма</h3><p>SHA256 файла ISO для проверки целостности.</p><p class="sha" id="sha-text">Появится после публикации релиза.</p><br><a class="btn" id="dl-sha" href="https://github.com/Mr-Profik1/Nevexona-2.1/releases/latest">SHA256</a></div>
+<div class="card"><span class="tag ok">Для разработчиков</span><h3>Исходный код</h3><p>Весь проект с инструкциями сборки и тестами.</p><br><a class="btn" href="https://github.com/Mr-Profik1/Nevexona-2.1/archive/refs/heads/main.zip">⬇ ZIP</a> <a class="btn" href="https://github.com/Mr-Profik1/Nevexona-2.1">GitHub</a></div>
+</div></div></section>
+
+<section id="flash"><div class="wrap">
+<h2>Загрузочная флешка</h2><p>Нужна флешка от 4 ГБ. Все данные на ней будут стёрты.</p>
+<div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-t="a">Телефон (EtchDroid)</button><button role="tab" aria-selected="false" data-t="w">Windows (Rufus)</button><button role="tab" aria-selected="false" data-t="e">Любая ОС (balenaEtcher)</button></div>
+<div class="card pane on" id="a"><ol><li>Скачайте ISO на телефон.</li><li>Подключите флешку через OTG-переходник.</li><li>В <b>EtchDroid</b> выберите <b>Write raw image</b>, затем ISO, затем флешку.</li><li>Дождитесь конца записи.</li></ol></div>
+<div class="card pane" id="w"><ol><li>Откройте Rufus, выберите флешку и ISO.</li><li>Схема разделов: <b>GPT</b> для UEFI или <b>MBR</b> для старых ПК.</li><li>Нажмите «Старт» и выберите режим <b>«Запись в DD-образе»</b>.</li></ol></div>
+<div class="card pane" id="e"><ol><li>Откройте balenaEtcher → <b>Flash from file</b> → выберите ISO.</li><li>Выберите флешку и нажмите <b>Flash</b>.</li></ol></div>
+<div class="card" style="margin-top:14px"><h3>Загрузка</h3><p>Вставьте флешку в компьютер, включите его и откройте меню загрузки (чаще всего <code>F12</code>, <code>F11</code>, <code>Esc</code> или <code>Del</code>), выберите USB. Если Secure Boot мешает, отключите его в настройках BIOS.</p></div>
+</div></section>
+
+<section id="status"><div class="wrap">
+<h2>Что готово</h2><p>Честный статус проекта. Всё, что не отмечено зелёным, ещё не работает полностью.</p>
+<div class="grid">
+<div class="card"><span class="tag ok">Есть</span><h3>Сборка ISO</h3><p>Debian 13, amd64, автоматическая сборка на GitHub, загрузка через GRUB.</p></div>
+<div class="card"><span class="tag wip">В работе</span><h3>Рабочий стол</h3><p>Openbox, панель, меню «Пуск», тема Minimal Orange. Проверка на реальных экранах впереди.</p></div>
+<div class="card"><span class="tag ok">Есть логика</span><h3>Голос, безопасность, бэкап</h3><p>Белый список голосовых команд, карантин, резервные копии. Окон пока нет.</p></div>
+<div class="card"><span class="tag wip">В работе</span><h3>Game Hub и Android</h3><p>Steam, Wine, Minecraft Java, Android через Waydroid. Часть игр с античитом не запустится.</p></div>
+<div class="card"><span class="tag wip">В работе</span><h3>Драйверы</h3><p>Определение устройств и подбор официальных пакетов Debian для Wi-Fi, Bluetooth, графики.</p></div>
+<div class="card"><span class="tag no">Нет</span><h3>Установщик на диск</h3><p>Пока только Live-режим с флешки.</p></div>
+</div></div></section>
+
+<section id="faq"><div class="wrap">
+<h2>Вопросы</h2>
+<details><summary>Запустится ли Roblox и все игры?</summary><p>Нет гарантий. Roblox официально не поддерживает Linux. Игры с античитом часто не работают. Steam с Proton и Minecraft Java работают лучше всего.</p></details>
+<details><summary>Это Linux?</summary><p>Да. Система называется NEVEXONA, а в основе лежит Debian и ядро Linux.</p></details>
+<details><summary>Можно ли обновлять без переустановки?</summary><p>Это в плане: проверка версии через GitHub Releases с проверкой SHA256 и подтверждением.</p></details>
+<details class="warn"><summary>Безопасно ли ставить на основной компьютер?</summary><p>Пока нет. Сначала запустите систему с флешки (Live) и не устанавливайте на диск. Сохраните важные данные.</p></details>
+</div></section>
+
+<footer><div class="wrap">NEVEXONA 2.1 GAMING · DEV · <a href="https://github.com/Mr-Profik1/Nevexona-2.1">GitHub</a></div></footer>
+
+<script>
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){
+ document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected','false')});
+ b.setAttribute('aria-selected','true');
+ document.querySelectorAll('.pane').forEach(function(p){p.classList.toggle('on',p.id===b.dataset.t)});});});
+(function(){
+ var meta=document.getElementById('rel-meta');
+ fetch('https://api.github.com/repos/Mr-Profik1/Nevexona-2.1/releases/latest').then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+  var iso=(d.assets||[]).filter(function(a){return /\.iso$/.test(a.name)})[0];
+  var sha=(d.assets||[]).filter(function(a){return /\.sha256$/.test(a.name)})[0];
+  if(!iso){meta.textContent='Релиз найден, но ISO в нём ещё нет.';return}
+  ['dl-iso','dl-iso2'].forEach(function(id){document.getElementById(id).href=iso.browser_download_url});
+  meta.textContent=(d.name||d.tag_name)+' · '+(iso.size/1048576).toFixed(0)+' МБ · 64-бит';
+  if(sha){document.getElementById('dl-sha').href=sha.browser_download_url;
+   fetch(sha.browser_download_url).then(function(r){return r.text()}).then(function(t){document.getElementById('sha-text').textContent=t.trim().split(/\s+/)[0]}).catch(function(){})}
+ }).catch(function(){meta.textContent='Релиз ещё не опубликован. Кнопка откроет страницу Releases.'});
+})();
+</script></body></html>
