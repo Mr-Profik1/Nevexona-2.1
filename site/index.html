@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEVEXONA 2.1 GAMING</title>
+<link rel="icon" href="favicon.svg">
+<style>
+:root{--bg:#171717;--bg2:#202020;--s:#292929;--s2:#323232;--acc:#FF781F;--hov:#FF914D;--t:#F2F2F2;--t2:#A0A0A0;--b:#3A3A3A;--err:#E05252}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font:16px/1.55 system-ui,sans-serif}
+main{max-width:760px;margin:0 auto;padding:32px 16px 64px}
+header{display:flex;align-items:center;gap:16px;margin-bottom:28px}header img{width:64px;height:64px}
+h1{font-size:28px;margin:0;letter-spacing:.08em}h1 small{display:block;color:var(--acc);font-size:14px;letter-spacing:.2em}
+.card{background:var(--bg2);border:1px solid var(--b);border-radius:10px;padding:20px;margin:16px 0}
+.btn{display:inline-block;background:var(--acc);color:var(--bg);padding:12px 22px;border-radius:8px;font-weight:700;text-decoration:none}
+.btn:hover{background:var(--hov)}code{background:var(--s);padding:2px 6px;border-radius:4px}
+ol{padding-left:22px}li{margin:6px 0}.warn{border-color:var(--err)}.muted{color:var(--t2);font-size:14px}
+a{color:var(--hov)}
+</style></head><body><main>
+<header><img src="logo.svg" alt="NEVEXONA"><h1>NEVEXONA<small>2.1 GAMING · DEV</small></h1></header>
+<div class="card"><p>Лёгкая система на базе Debian 13 (Trixie), 64-бит. Проект в ранней разработке: образ собирается автоматически, но проверен не на всех компьютерах.</p>
+<p><a class="btn" href="https://github.com/Mr-Profik1/Nevexona-2.1/releases/latest">Скачать ISO</a></p>
+<p class="muted">Рядом с файлом лежит SHA256 для проверки. Если релизов пока нет, образ ещё не опубликован.</p></div>
+<div class="card"><h2>Загрузочная флешка с телефона (EtchDroid)</h2><ol>
+<li>Скачайте ISO на телефон по кнопке выше.</li>
+<li>Подключите флешку к телефону через OTG-переходник.</li>
+<li>Откройте <b>EtchDroid</b> → <b>Write raw image</b> (запись образа) → выберите ISO → выберите флешку.</li>
+<li>Дождитесь окончания записи. <b>Все данные на флешке будут стёрты.</b></li>
+<li>Вставьте флешку в ПК, включите его и выберите загрузку с USB (обычно F12, F11, Esc или Del).</li></ol></div>
+<div class="card"><h2>С компьютера</h2><p>Windows: Rufus в режиме «DD-образ». Любая ОС: balenaEtcher.</p></div>
+<div class="card warn"><h2>Важно</h2><p>Сначала проверьте систему в режиме Live, не устанавливая её на диск. Установщик на жёсткий диск ещё в разработке. Совместимость с каждым компьютером и играми не гарантируется.</p></div>
+<p class="muted">Исходники: <a href="https://github.com/Mr-Profik1/Nevexona-2.1">GitHub</a></p>
+</main></body></html>

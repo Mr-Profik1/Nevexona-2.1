@@ -57,3 +57,8 @@ GUI НЕ запускалась ни разу: в среде разработк�
 ## Оформление в стиле Windows (по референсам пользователя)
 Панель tint2 48px с кнопкой «Пуск» (jgmenu, тема Minimal Orange), новые обои (свечение и лучи только в обоях).
 НЕ проверено: параметры jgmenurc и работа кнопки «Пуск» — проверяются на ВМ. Иконки приложений пока системные.
+
+## Сайт и публикация ISO
+site/index.html (скачивание, инструкция EtchDroid/Rufus/balenaEtcher), .github/workflows/pages.yml (GitHub Pages).
+Build ISO: input publish=true публикует ISO + .sha256 в Releases (softprops/action-gh-release@v2; версия экшена не сверена с актуальной).
+Нужно включить Pages: Settings → Pages → Source: GitHub Actions. Лимит файла в Release — 2 GB.
