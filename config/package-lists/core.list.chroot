@@ -17,11 +17,10 @@ feh
 scrot
 python3
 python3-tk
-lxterminal
 firefox-esr
 alsa-utils
 rfkill
 lightdm-gtk-greeter
-policykit-1
+polkitd
 clamav
 blueman
