@@ -4,6 +4,7 @@ from drivers import detect
 from gaming import hub, android
 from security.quarantine import Quarantine
 from voice import intents
+from system import profiles
 
 def monitor_text():
     m, d = monitor.meminfo(), monitor.disk()
@@ -48,3 +49,7 @@ def update_status(opener=None):
     if r is None:
         return "Релизов с пакетом обновления пока нет"
     return f"Доступна версия {r['version']}" if updater.newer(r["version"]) else "У вас последняя версия"
+
+def profile_text():
+    m = monitor.meminfo()
+    return f"ОЗУ: {m['total']//2**20} МБ. Рекомендуемый профиль: {profiles.recommend(m['total'])}"

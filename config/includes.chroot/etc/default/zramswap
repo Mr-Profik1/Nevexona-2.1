@@ -1,0 +1,4 @@
+# zram-tools: сжатый swap в ОЗУ
+ALGO=zstd
+PERCENT=50
+PRIORITY=100

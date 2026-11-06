@@ -19,6 +19,7 @@ lb config \
   --bootappend-live "boot=live components quiet splash"
 mkdir -p config/package-lists config/includes.chroot
 cp -r "$ROOT"/config/includes.chroot/. config/includes.chroot/
+mkdir -p config/hooks/live && cp "$ROOT"/config/hooks/live/* config/hooks/live/ 2>/dev/null || true
 mkdir -p config/includes.chroot/usr/lib/nevexona
 for d in voice security system drivers gaming apps; do cp -r "$ROOT/$d" config/includes.chroot/usr/lib/nevexona/; done
 cp "$ROOT"/config/package-lists/*.list.chroot config/package-lists/

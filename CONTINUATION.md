@@ -62,3 +62,7 @@ GUI НЕ запускалась ни разу: в среде разработк�
 site/index.html (скачивание, инструкция EtchDroid/Rufus/balenaEtcher), .github/workflows/pages.yml (GitHub Pages).
 Build ISO: input publish=true публикует ISO + .sha256 в Releases (softprops/action-gh-release@v2; версия экшена не сверена с актуальной).
 Нужно включить Pages: Settings → Pages → Source: GitHub Actions. Лимит файла в Release — 2 GB.
+
+## Оптимизация под 2 ГБ ОЗУ (DEV 0.4.0)
+zram-tools (zstd, 50%), sysctl (swappiness, cache pressure), хук отключения фоновых таймеров в Live, профили производительности (system/profiles.py, вкладка «Профиль»).
+Реальный расход ОЗУ НЕ измерен: нужна загрузка ISO на ВМ с 2 ГБ и замер `free -m` после входа. Firefox на 2 ГБ тяжёлый.

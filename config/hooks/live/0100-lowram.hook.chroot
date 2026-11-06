@@ -1,0 +1,6 @@
+#!/bin/sh
+# Отключаем фоновые службы, которые не нужны в Live-сеансе (сеть, безопасность не трогаем)
+for u in clamav-freshclam.service apt-daily.timer apt-daily-upgrade.timer man-db.timer e2scrub_all.timer; do
+  systemctl disable "$u" 2>/dev/null || true
+done
+exit 0

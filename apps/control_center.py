@@ -49,6 +49,8 @@ def main():
     ttk.Button(f, text="Проверить команду", command=lambda: out.config(text=panels.voice_preview(e.get())[0])).pack(pady=10)
     tk.Label(f, text="Распознавание речи (микрофон) ещё не подключено: здесь проверка текстовых команд.", bg=BG2, fg=TXT2).pack()
 
+    f = tab("Профиль"); pl = tk.Label(f, bg=BG2, fg=TXT, font=("DejaVu Sans", 13)); pl.pack(padx=20, pady=30)
+    pl.config(text=panels.profile_text())
     f = tab("Обновления"); out2 = tk.Label(f, bg=BG2, fg=TXT, font=("DejaVu Sans", 13)); out2.pack(padx=20, pady=30)
     ttk.Button(f, text="Проверить обновления", command=lambda: out2.config(text=panels.update_status())).pack()
     root.mainloop()
