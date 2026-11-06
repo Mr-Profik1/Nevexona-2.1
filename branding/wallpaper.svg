@@ -7,7 +7,7 @@
 <rect width="1920" height="1080" fill="url(#g)"/>
 <path d="M-100 900L900 -60h120L20 1000z" fill="#202020"/><path d="M2020 120L1100 1140h-120L1900 120z" fill="#202020"/>
 <g stroke="url(#b)" stroke-width="4" fill="none"><path d="M-50 760L760 -40"/><path d="M1180 1120L1980 220"/><path d="M-50 860L840 -40" opacity=".5"/></g>
-<g transform="translate(790,250)"><path d="M0 330V0h70l160 220V0h70v330h-70L70 110v220z" fill="#FF781F"/><path d="M0 330V0h70l160 220V0h70v330h-70L70 110v220z" fill="none" stroke="#FF914D" stroke-width="2" opacity=".6"/></g>
+<g transform="translate(730,100) scale(1.8)"><g transform="translate(128 128) skewX(-8) translate(-128 -128)"><path d="M62 204V52h38l56 84V52h38v152h-38l-56-84v84z" fill="#FF781F"/><path d="M156 52h38v152h-38z" fill="#F2F2F2"/></g></g>
 <text x="960" y="700" fill="#F2F2F2" font-family="DejaVu Sans" font-size="96" letter-spacing="22" text-anchor="middle">NEVEXONA</text>
 <text x="960" y="770" fill="#FF781F" font-family="DejaVu Sans" font-size="44" letter-spacing="14" text-anchor="middle" font-weight="bold">2.1 GAMING</text>
 <text x="960" y="830" fill="#A0A0A0" font-family="DejaVu Sans" font-size="22" letter-spacing="12" text-anchor="middle">PLAY · WORK · CREATE</text>

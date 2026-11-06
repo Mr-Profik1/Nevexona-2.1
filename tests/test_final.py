@@ -44,5 +44,15 @@ class F(unittest.TestCase):
         for f in ("etc/lightdm/lightdm-gtk-greeter.conf", "etc/xdg/dunst/dunstrc", "usr/local/bin/nevexona-voice", "usr/local/bin/nevexona-backup"):
             self.assertTrue(os.path.isfile(os.path.join(R, "config/includes.chroot", f)), f)
 
+
+class Brand(unittest.TestCase):
+    def test_logo_assets(self):
+        for f in ("logo.svg", "logo.png", "logo.ico", "favicon.svg", "favicon.ico", "boot-logo.svg", "installer-logo.svg", "mark.png", "wallpaper.svg"):
+            p = os.path.join(R, "branding", f); self.assertTrue(os.path.getsize(p) > 100, f)
+        self.assertIn("#FF781F", open(os.path.join(R, "branding/logo.svg")).read())
+    def test_plymouth(self):
+        t = os.path.join(R, "config/includes.chroot/usr/share/plymouth/themes/nevexona")
+        for f in ("nevexona.plymouth", "nevexona.script", "logo.png"): self.assertTrue(os.path.isfile(os.path.join(t, f)), f)
+
 if __name__ == "__main__":
     unittest.main()

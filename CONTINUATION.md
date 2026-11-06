@@ -100,3 +100,7 @@ system/monitors.py (xrandr), gaming/proton.py (версии Proton, бэкап �
 apps/backup.py, экран входа (lightdm-gtk-greeter), dunst, volumeicon, blueman-applet, тёмная тема GTK.
 Roblox: через Waydroid не гарантирован (защита от эмуляторов).
 НЕ сделано: Plymouth (загрузочный экран), окно мониторов, ваш логотип, настройка Calamares, локальная LLM, проверка на экране/железе.
+
+## Брендинг (DEV 0.9.0)
+Собственный логотип N (оранжевый + светлая вертикаль, наклон), все форматы в branding/ (svg, png, ico, favicon, boot/installer logo, mark.png), новые обои, загрузочный экран Plymouth (тема nevexona, хук 0200, пакет plymouth).
+Plymouth/хук не проверены на загрузке. Если у пользователя есть собственный логотип — заменить branding/logo.svg и пересобрать png/ico.
