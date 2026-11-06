@@ -1,3 +1,6 @@
 feh --bg-fill /usr/share/backgrounds/nevexona/wallpaper.png &
 tint2 &
 nm-applet &
+dunst &
+volumeicon &
+blueman-applet &

@@ -24,7 +24,7 @@ class Hub(unittest.TestCase):
     def test_roblox_status_is_honest(self):
         r = [p for p in hub.PLATFORMS if p["id"] == "roblox"][0]
         self.assertIsNone(r["install"])
-        self.assertIn("НЕ поддерживается", r["status"])
+        self.assertIn("НЕ поддерживается", r["status"]); self.assertIn("Не обещаем", r["status"])
 
 if __name__ == "__main__":
     unittest.main()

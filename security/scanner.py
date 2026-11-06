@@ -22,3 +22,8 @@ def scan(paths, runner=None):
     ver = run(["clamscan", "--version"], capture_output=True, text=True, shell=False, check=False).stdout.strip()
     r = run(["clamscan", "-r", "--"] + list(paths), capture_output=True, text=True, shell=False, check=False)
     rep = parse_report(r.stdout, ver); rep["status"] = "завершено"; return rep
+
+def usb_mounts(text=None):
+    """Точки монтирования съёмных носителей (/media, /run/media) из /proc/mounts."""
+    text = text if text is not None else open("/proc/mounts").read()
+    return sorted({l.split()[1].replace("\\040", " ") for l in text.splitlines() if len(l.split()) > 1 and l.split()[1].startswith(("/media/", "/run/media/"))})

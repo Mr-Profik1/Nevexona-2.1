@@ -93,3 +93,10 @@ ai/assistant.py (LOCAL/CLOUD/AUTO, ключ 0600, согласие перед о
 apps/explorer.py (+explorer_core, тесты), apps/game_hub.py, apps/settings.py, apps/theme.py; запуск: nevexona-explorer / -gamehub / -settings; .desktop-файлы для меню.
 GUI не запускалась на экране (нет tkinter в среде разработки) — проверены только компиляция и логика. Следующий шаг: ВМ, скриншоты, правки.
 Нет: окно записи микрофона, настройка Calamares, локальная LLM в ISO.
+
+## DEV 0.8.0
+system/schedule.py + backup_cli.py (расписание бэкапов, systemd user timer), security/integrity.py (эталон SHA256 + автозапуск), scanner.usb_mounts,
+system/monitors.py (xrandr), gaming/proton.py (версии Proton, бэкап сохранений), voice/session.py + apps/voice_window.py (микрофон только по кнопке, индикатор),
+apps/backup.py, экран входа (lightdm-gtk-greeter), dunst, volumeicon, blueman-applet, тёмная тема GTK.
+Roblox: через Waydroid не гарантирован (защита от эмуляторов).
+НЕ сделано: Plymouth (загрузочный экран), окно мониторов, ваш логотип, настройка Calamares, локальная LLM, проверка на экране/железе.

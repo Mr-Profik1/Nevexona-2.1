@@ -13,7 +13,7 @@ PLATFORMS = [
     {"id": "minecraft-java", "name": "Minecraft Java Edition", "install": ["apt", "install", "default-jre"], "needs_i386": False,
      "status": "Работает на Linux; нужен лаунчер Mojang или Prism Launcher (устанавливается отдельно) и ваша лицензия."},
     {"id": "roblox", "name": "Roblox", "install": None, "needs_i386": False,
-     "status": "Официально НЕ поддерживается на Linux. Работа через Wine нестабильна и может блокироваться. Не обещаем."},
+     "status": "Официально НЕ поддерживается на Linux. Android-версия через Waydroid может запуститься, но защита Roblox от эмуляторов способна её блокировать. Не обещаем."},
 ]
 
 def steam_games(steam_root=None):
