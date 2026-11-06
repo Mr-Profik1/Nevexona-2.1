@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=NEVEXONA Explorer
+Comment=Файлы и папки
+Exec=nevexona-explorer
+Icon=nevexona
+Categories=System;FileManager;

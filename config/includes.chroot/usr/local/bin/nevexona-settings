@@ -1,0 +1,2 @@
+#!/bin/sh
+cd /usr/lib/nevexona && exec python3 -m apps.settings "$@"

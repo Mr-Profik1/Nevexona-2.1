@@ -88,3 +88,8 @@ gaming/platforms.py (установка Steam/Lutris/Wine/Java с подтвер
 ai/assistant.py (LOCAL/CLOUD/AUTO, ключ 0600, согласие перед облаком), установщик: пакеты calamares + calamares-settings-debian (НЕ проверен, брендинг не настроен).
 Вкладки «Ассистент», кнопки установки платформ. Не проверено: имена пакетов (wine, calamares-settings-debian), GUI, vosk (нужен pip install vosk), llama-cli в ISO нет.
 Нет: локальная LLM в ISO (качается пользователем), Explorer/Settings/Game Hub как отдельные окна, окно записи микрофона.
+
+## Отдельные окна (DEV 0.7.0)
+apps/explorer.py (+explorer_core, тесты), apps/game_hub.py, apps/settings.py, apps/theme.py; запуск: nevexona-explorer / -gamehub / -settings; .desktop-файлы для меню.
+GUI не запускалась на экране (нет tkinter в среде разработки) — проверены только компиляция и логика. Следующий шаг: ВМ, скриншоты, правки.
+Нет: окно записи микрофона, настройка Calamares, локальная LLM в ISO.

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=NEVEXONA Settings
+Comment=Настройки системы
+Exec=nevexona-settings
+Icon=nevexona
+Categories=Settings;
