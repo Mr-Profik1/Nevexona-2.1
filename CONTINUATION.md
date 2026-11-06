@@ -71,3 +71,9 @@ zram-tools (zstd, 50%), sysctl (swappiness, cache pressure), хук отключ
 network/center.py (Wi-Fi nmcli, Bluetooth bluetoothctl), laptop/center.py (батарея, яркость), security/scanner.py (ClamAV, отчёт),
 system/files.py (копия, перенос, поиск, корзина freedesktop), system/display.py (масштаб 100–200%). Тесты: tests/test_features.py. Вкладки Сеть/Ноутбук/Масштаб в Control Center.
 НЕ проверено на железе: nmcli/bluetoothctl/ClamAV в Live, GUI-вкладки, запись яркости (нужны права).
+
+## Расширенный набор (extras.list.chroot)
+Офис (LibreOffice), VLC, GIMP, Python dev, git, htop и др. Ожидаемый размер ISO ~2.0–2.5 ГБ (оценка, не измерено).
+ВАЖНО: файл в GitHub Releases не может быть больше 2 ГБ. При превышении публикация релиза упадёт — ISO останется в Artifacts (в ZIP).
+Не добавлено намеренно: Wine/Steam (нужен i386 multiarch в live-build, риск сломать сборку) — ставятся из Game Hub по выбору.
+Имена пакетов проверяются только реальной сборкой.

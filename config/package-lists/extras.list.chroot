@@ -1,0 +1,15 @@
+# Расширенный набор: офис, медиа, графика, разработка (все имена — официальные пакеты Debian)
+libreoffice-writer
+libreoffice-calc
+libreoffice-impress
+vlc
+gimp
+python3-pip
+python3-venv
+python3-dev
+build-essential
+git
+htop
+file-roller
+mousepad
+ristretto
