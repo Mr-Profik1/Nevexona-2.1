@@ -77,3 +77,8 @@ system/files.py (копия, перенос, поиск, корзина freedesk
 ВАЖНО: файл в GitHub Releases не может быть больше 2 ГБ. При превышении публикация релиза упадёт — ISO останется в Artifacts (в ZIP).
 Не добавлено намеренно: Wine/Steam (нужен i386 multiarch в live-build, риск сломать сборку) — ставятся из Game Hub по выбору.
 Имена пакетов проверяются только реальной сборкой.
+
+## Драйверы в ISO (drivers.list.chroot)
+Firmware Intel/Realtek/Atheros/Broadcom/MediaTek/AMD, микрокод CPU, видеодрайверы Xorg (включая nouveau для старых NVIDIA), Mesa/Vulkan, PipeWire, принтеры/сканеры, ntfs/exfat, gparted, VPN, pciutils (нужен Driver Center).
+Проприетарный драйвер NVIDIA НЕ включён (ставится по выбору). Publish release теперь continue-on-error (лимит 2 ГБ).
+Ожидаемый размер ISO ~2.5–3 ГБ — оценка, измерить после сборки.

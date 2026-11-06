@@ -44,6 +44,7 @@ jobs:
           if-no-files-found: warn
       - name: Publish release
         if: ${{ inputs.publish }}
+        continue-on-error: true
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ inputs.version }}
