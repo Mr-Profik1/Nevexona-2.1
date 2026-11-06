@@ -66,3 +66,8 @@ Build ISO: input publish=true публикует ISO + .sha256 в Releases (soft
 ## Оптимизация под 2 ГБ ОЗУ (DEV 0.4.0)
 zram-tools (zstd, 50%), sysctl (swappiness, cache pressure), хук отключения фоновых таймеров в Live, профили производительности (system/profiles.py, вкладка «Профиль»).
 Реальный расход ОЗУ НЕ измерен: нужна загрузка ISO на ВМ с 2 ГБ и замер `free -m` после входа. Firefox на 2 ГБ тяжёлый.
+
+## Пакет функций (DEV 0.5.0)
+network/center.py (Wi-Fi nmcli, Bluetooth bluetoothctl), laptop/center.py (батарея, яркость), security/scanner.py (ClamAV, отчёт),
+system/files.py (копия, перенос, поиск, корзина freedesktop), system/display.py (масштаб 100–200%). Тесты: tests/test_features.py. Вкладки Сеть/Ноутбук/Масштаб в Control Center.
+НЕ проверено на железе: nmcli/bluetoothctl/ClamAV в Live, GUI-вкладки, запись яркости (нужны права).

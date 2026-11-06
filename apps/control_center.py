@@ -51,6 +51,14 @@ def main():
 
     f = tab("Профиль"); pl = tk.Label(f, bg=BG2, fg=TXT, font=("DejaVu Sans", 13)); pl.pack(padx=20, pady=30)
     pl.config(text=panels.profile_text())
+    f = tab("Сеть"); t = table(f, ("Сеть / устройство", "Сигнал / MAC", "Защита"))
+    ttk.Button(f, text="Wi-Fi: найти сети", command=lambda: fill(t, [r + ("",) * (3 - len(r)) for r in panels.wifi_rows()])).pack(side="left", padx=10, pady=(0, 10))
+    ttk.Button(f, text="Bluetooth: устройства", command=lambda: fill(t, [r + ("",) for r in panels.bt_rows()])).pack(side="left", pady=(0, 10))
+    f = tab("Ноутбук"); ll = tk.Label(f, bg=BG2, fg=TXT, justify="left", font=("DejaVu Sans", 13)); ll.pack(anchor="w", padx=20, pady=20)
+    ll.config(text=panels.laptop_text())
+    f = tab("Масштаб"); tk.Label(f, text="Масштаб интерфейса (применяется после перезахода):", bg=BG2, fg=TXT).pack(pady=20)
+    for pc in (100, 125, 150, 200):
+        ttk.Button(f, text=f"{pc}%", command=lambda x=pc: messagebox.showinfo("Масштаб", f"Сохранено: {panels.set_scale(x)} DPI. Перезайдите в сеанс.")).pack(pady=4)
     f = tab("Обновления"); out2 = tk.Label(f, bg=BG2, fg=TXT, font=("DejaVu Sans", 13)); out2.pack(padx=20, pady=30)
     ttk.Button(f, text="Проверить обновления", command=lambda: out2.config(text=panels.update_status())).pack()
     root.mainloop()
