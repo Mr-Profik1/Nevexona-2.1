@@ -24,7 +24,7 @@ def compare(old, paths=None):
             "missing": [p for p in old["hashes"] if p not in new]}
 
 def autostart(dirs=None, openbox=None):
-    dirs = dirs or [os.path.expanduser("~/.config/autostart"), "/etc/xdg/autostart"]
+    dirs = dirs if dirs is not None else [os.path.expanduser("~/.config/autostart"), "/etc/xdg/autostart"]
     items = []
     for d in dirs:
         for f in sorted(glob.glob(os.path.join(d, "*.desktop"))):
