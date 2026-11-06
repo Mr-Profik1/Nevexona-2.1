@@ -3,6 +3,9 @@
 import os, sys
 sys.path.insert(0, os.environ.get("NEVEXONA_LIB", "/usr/lib/nevexona"))
 from apps import panels
+from gaming import platforms
+from ai import assistant
+from voice import stt
 
 BG, BG2, SURF, ACC, TXT, TXT2 = "#171717", "#202020", "#292929", "#FF781F", "#F2F2F2", "#A0A0A0"
 LIB = os.path.expanduser("~/.config/nevexona/games.json")
@@ -41,6 +44,12 @@ def main():
     def refresh_games(): fill(t, panels.games_rows(LIB) + panels.platforms_rows())
     ttk.Button(f, text="Обновить", command=refresh_games).pack(); tk.Label(f, text="NEVEXONA Android: " + panels.android_status(), bg=BG2, fg=TXT2).pack(pady=8)
 
+    for pid, label in (("steam", "Установить Steam"), ("lutris", "Установить Lutris"), ("wine", "Установить Wine")):
+        def go(x=pid, l=label):
+            if messagebox.askyesno(l, "Будут изменены пакеты системы (потребуется пароль). Продолжить?"):
+                res = platforms.install(x, confirmed=True)
+                messagebox.showinfo(l, "Готово" if all(c == 0 for _, c in res) else "Ошибка установки: смотрите журнал apt")
+        ttk.Button(f, text=label, command=go).pack(side="left", padx=6, pady=8)
     f = tab("Безопасность"); t = table(f, ("ID", "Исходный путь", "Причина"))
     ttk.Button(f, text="Показать карантин", command=lambda: fill(t, panels.quarantine_rows(QDIR))).pack(pady=(0, 10))
 
@@ -49,6 +58,15 @@ def main():
     ttk.Button(f, text="Проверить команду", command=lambda: out.config(text=panels.voice_preview(e.get())[0])).pack(pady=10)
     tk.Label(f, text="Распознавание речи (микрофон) ещё не подключено: здесь проверка текстовых команд.", bg=BG2, fg=TXT2).pack()
 
+    f = tab("Ассистент"); e2 = tk.Entry(f, font=("DejaVu Sans", 12), bg=SURF, fg=TXT, insertbackground=TXT); e2.pack(fill="x", padx=20, pady=12)
+    ao = tk.Label(f, bg=BG2, fg=TXT, wraplength=800, justify="left"); ao.pack(padx=20)
+    def ask_ai():
+        try:
+            who, text = assistant.ask(e2.get(), "AUTO", key=assistant.load_key(), consent=lambda m: messagebox.askyesno("Облако", m))
+            ao.config(text=f"[{who}] {text}")
+        except Exception as ex: ao.config(text=str(ex))
+    ttk.Button(f, text="Спросить", command=ask_ai).pack(pady=6)
+    tk.Label(f, text="Ключ OpenRouter вводится в настройках и хранится только на этом компьютере. " + stt.info(), bg=BG2, fg=TXT2, wraplength=800).pack(pady=8)
     f = tab("Профиль"); pl = tk.Label(f, bg=BG2, fg=TXT, font=("DejaVu Sans", 13)); pl.pack(padx=20, pady=30)
     pl.config(text=panels.profile_text())
     f = tab("Сеть"); t = table(f, ("Сеть / устройство", "Сигнал / MAC", "Защита"))

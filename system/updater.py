@@ -37,3 +37,9 @@ def install(deb_path, confirmed=False, runner=None):
     if not deb_path.endswith(".deb") or not os.path.isfile(deb_path):
         raise ValueError("нужен существующий .deb")
     return (runner or subprocess.run)(["pkexec", "apt", "install", "-y", os.path.abspath(deb_path)], shell=False, check=False)
+
+def download(url, dest, opener=None):
+    """Скачивание файла обновления. Только https. Установка отдельно, после verify()."""
+    if not url.startswith("https://"): raise ValueError("только https")
+    data = (opener or urllib.request.urlopen)(url, timeout=60).read()
+    open(dest, "wb").write(data); return dest

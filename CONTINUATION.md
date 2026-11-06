@@ -82,3 +82,9 @@ system/files.py (копия, перенос, поиск, корзина freedesk
 Firmware Intel/Realtek/Atheros/Broadcom/MediaTek/AMD, микрокод CPU, видеодрайверы Xorg (включая nouveau для старых NVIDIA), Mesa/Vulkan, PipeWire, принтеры/сканеры, ntfs/exfat, gparted, VPN, pciutils (нужен Driver Center).
 Проприетарный драйвер NVIDIA НЕ включён (ставится по выбору). Publish release теперь continue-on-error (лимит 2 ГБ).
 Ожидаемый размер ISO ~2.5–3 ГБ — оценка, измерить после сборки.
+
+## Пакет «всё остальное» (DEV 0.6.0)
+gaming/platforms.py (установка Steam/Lutris/Wine/Java с подтверждением и i386), system/updater.download, voice/stt.py (Vosk, модель только по согласию),
+ai/assistant.py (LOCAL/CLOUD/AUTO, ключ 0600, согласие перед облаком), установщик: пакеты calamares + calamares-settings-debian (НЕ проверен, брендинг не настроен).
+Вкладки «Ассистент», кнопки установки платформ. Не проверено: имена пакетов (wine, calamares-settings-debian), GUI, vosk (нужен pip install vosk), llama-cli в ISO нет.
+Нет: локальная LLM в ISO (качается пользователем), Explorer/Settings/Game Hub как отдельные окна, окно записи микрофона.
